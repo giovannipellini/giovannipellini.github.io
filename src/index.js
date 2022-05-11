@@ -4,19 +4,31 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Project from './project';
 import 'bootstrap/dist/css/bootstrap.css';
+import ProjectData from './projectData.json'
 
-import vpt1 from './img/VPT/vpt1.png'
+//import vpt1 from './img/VPT/vpt1.png'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-    <Project image={vpt1} title="Vita Power Tool" description ="This is a website used in my current job for helping and speeding up common tasks. The features includes:
+    <img src="./Img/Code2.png" alt="" style={{width:'100%', height:'20rem', margin:'0px 0 0 -0px', paddingBottom:'5rem'}} />
+    <div className='container'>
+      <div className='row'>
+        {
+          
+          ProjectData.map(
+            pData => {
+              return (
 
-Enquiring several Oracle and SQL database
-Inspecting online applications to detect downtimes
-Batch process to detect possible application failures
-Online WS testing using Reflection" />
+                <Project key={pData.id} image={pData.image} title={pData.title} description={pData.description} features={pData.features} tech={pData.tech} />
+
+              )
+            }
+          )
+        }
+      </div>
+    </div>
   </React.StrictMode>
 );
 

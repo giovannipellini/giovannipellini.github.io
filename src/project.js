@@ -1,28 +1,60 @@
 import { Component } from "react";
+import Feature from "./feature";
+import Tech from "./tech";
 
-class Project extends Component{
-    render()
-    {
-        return (
-          
-            <div className="card">
-            <img src={this.props.image} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{this.props.title}</h5>
-              <p className="card-text">{this.props.description}</p>
-            </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">An item</li>
-              <li className="list-group-item">A second item</li>
-              <li className="list-group-item">A third item</li>
-            </ul>
-            <div className="card-body">
-             
-            </div>
+class Project extends Component {
+  render() {
+    return (
+      <div className="col col-xxl-4 col-lg-6 col-sm-12 ">
+        <div className="card">
+          <h3 className="card-header">{this.props.title}</h3>
+          <img src={this.props.image} className="card-img-top" alt="..." />
+          <div className="card-body">
+            <p className="card-text">{this.props.description}</p>
+          </div>
+          <ul className="list-group list-group-flush">
+
+
+            {
+              this.props.features.map(
+                feature => {
+                  return (
+
+
+                    <Feature key={feature.id} title={feature.title} />
+
+                  )
+                }
+              )
+            }
+
+          </ul>
+
+
+
+
+          <div className="row">
+            {
+              this.props.tech.map(
+                tec => {
+                  return (
+
+                    <Tech key={tec.id} title={tec.title} />
+
+                  )
+                }
+              )
+            }
           </div>
 
-        )
-    }
+
+          <div className="card-body">
+
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default Project;
