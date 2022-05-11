@@ -1,0 +1,49 @@
+[
+    {
+      "id": 1000,
+      "image": "./img/VPT/vpt1.png",
+      "title": "Vita Power Tool",
+      "description": "This is a website used in my current job for helping and speeding up common tasks.",
+      "features": [
+        { "id": 100, "title": "Enquiring several Oracle and SQL database"},
+        { "id": 101, "title": "Inspecting online applications to detect downtimes"},
+        { "id": 102, "title": "Batch process to detect possible application failures"},
+        { "id": 103, "title": "Online WS testing using Reflection"}
+      ],
+      "tech": [
+        { "id": 150, "title": "VB.NET 2019 (Framework 4.7)"},
+        { "id": 151, "title": "SQL Server 2017"},
+        { "id": 152, "title": "Bootstrap 4"},
+        { "id": 153, "title": "Json.NET"}
+      ]
+    },
+    {
+      "id": 2000,
+      "image": "",
+      "title": "Hearthstone Mercenaries BOT",
+      "description": "This is a Windows application used for the Blizzard/Activision game Hearthstone. The goal of this BOT is to automate the battles and progress the bounty to gain experience. It uses OpenCV technology to gather information from the game",
+      "features": [
+        { "id": 200, "title": "Characters recognition"},
+        { "id": 201, "title": "Selecting skills and pointing valid targets for the skill"},
+        { "id": 202, "title": "Recovery in case of failures"}
+      ],
+      "tech": [
+        { "id": 250, "title": "C# 2019 (Framework 4.7)"},
+        { "id": 251, "title": "Emgu OpenCV"}
+      ]
+    },
+    {
+      "id": 3000,
+      "image": "./img/W3DEngine/WolfensteinEngine.gif",
+      "title": "Wolfenstein 3D Engine",
+      "description": "This is my reinterpretation of the Wolfenstein 3D Engine. It doesn't use any 3D technology, everything is done by the CPU. The player has a position and a field of view and the algorithm determines which blocks are inside, then it calculates the screen projection of its vertexes to draw the lines.",
+      "features": [
+        { "id": 300, "title": "Characters recognition"},
+        { "id": 301, "title": "Selecting skills and pointing valid targets for the skill"},
+        { "id": 302, "title": "Recovery in case of failures"}
+      ],
+      "tech": [
+        { "id": 350, "title": "C# 2019 (Framework 4.7)"}
+      ]
+    }
+  ]
