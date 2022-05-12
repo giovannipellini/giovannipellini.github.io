@@ -11,7 +11,7 @@
         { "id": 3, "title": "Online WS testing using Reflection"}
       ],
       "tech": [
-        { "id": 0, "title": "VB.NET 2019 (Framework 4.7)"},
+        { "id": 0, "title": "VB.NET 2019"},
         { "id": 1, "title": "SQL Server 2017"},
         { "id": 2, "title": "Oracle"},
         { "id": 3, "title": "Bootstrap 4"},
@@ -20,22 +20,22 @@
     },
     {
       "id": 1,
-      "image": "",
-      "title": "This WebSite",
+      "image": "./img/Site.png",
+      "title": "Personal WebSite",
       "description": "This website is built in React and hosted in Google Firebase",
       "features": [
         { "id": 0, "title": ""}
       ],
       "tech": [
-        { "id": 0, "title": "Visual Studio Code"},
-        { "id": 1, "title": "React"},
+        { "id": 0, "title": "React"},
+        { "id": 1, "title": "Visual Studio Code"},
         { "id": 2, "title": "Bootstrap"},
         { "id": 3, "title": "FireBase"}
       ]
     },
     {
       "id": 2,
-      "image": "",
+      "image": "./img/Hearthstone Mercenaries BOT/1.png",
       "title": "Hearthstone Mercenaries BOT",
       "description": "This is a Windows application used for the Blizzard/Activision game Hearthstone. The goal of this BOT is to automate the battles and progress the bounty to gain experience. It uses OpenCV technology to gather information from the game",
       "features": [
@@ -44,22 +44,33 @@
         { "id": 2, "title": "Recovery in case of failures"}
       ],
       "tech": [
-        { "id": 0, "title": "C# 2019 (Framework 4.7)"},
-        { "id": 1, "title": "Emgu OpenCV"}
+        { "id": 0, "title": "C# 2019"},
+        { "id": 1, "title": "Emgu"},
+        { "id": 2, "title": "OpenCV"}
       ]
     },
     {
       "id": 3,
-      "image": "./img/W3DEngine/WolfensteinEngine.gif",
+      "image": "./img/W3DEngine/W3D.png",
       "title": "Wolfenstein 3D Engine",
       "description": "This is my reinterpretation of the Wolfenstein 3D Engine. It doesn't use any 3D technology, everything is done by the CPU. The player has a position and a field of view and the algorithm determines which blocks are inside, then it calculates the screen projection of its vertexes to draw the lines.",
       "features": [
-        { "id": 0, "title": "Characters recognition"},
-        { "id": 1, "title": "Selecting skills and pointing valid targets for the skill"},
-        { "id": 2, "title": "Recovery in case of failures"}
+        { "id": 0, "title": ""}
       ],
       "tech": [
-        { "id": 0, "title": "C# 2019 (Framework 4.7)"}
+        { "id": 0, "title": "C# 2019"}
+      ]
+    },
+    {
+      "id": 4,
+      "image": "./img/WordleSolver/1.png",
+      "title": "Wordle Solver",
+      "description": "The porpouse of this Windows application is to solve the game Wordle. Given the list of english words it search for the most frequent letters used in every position. Then will search the nearest valid word in the dictionary. After guessing the algorithm will read the game hints and filter out any word that is not matching. The process then repeats until the word is found or the player is out of guesses.",
+      "features": [
+        { "id": 0, "title": "It can play against wordlegame.org or against himself."}
+      ],
+      "tech": [
+        { "id": 0, "title": "C# 2019"}
       ]
     }
   ]

@@ -12,8 +12,13 @@ import ProjectData from './projectData.json'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <img src="./Img/Code2.png" alt="" style={{width:'100%', height:'20rem', margin:'0px 0 0 -0px', paddingBottom:'5rem'}} />
+    <div style={{backgroundImage: `url('./img/BackGround/2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
+    {/* <img src="./Img/Code2.png" alt="" style={{width:'100%', height:'20rem', margin:'0px 0 0 -0px', paddingBottom:'5rem'}} /> */}
+    
     <div className='container'>
+    <h2 className='text-center'>About me</h2>
+    <p>I'm a software engineer with 10+ year experience. I'm currently working full time for an italian insurance company.</p>
+    <h1 className='text-center'>Projects</h1>
       <div className='row'>
         {
           

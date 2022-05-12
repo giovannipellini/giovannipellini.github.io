@@ -11,8 +11,8 @@ class Project extends Component {
           <img src={this.props.image} className="card-img-top" alt="..." />
           <div className="card-body">
             <p className="card-text">{this.props.description}</p>
-          </div>
-          <ul className="list-group list-group-flush">
+
+
 
 
             {
@@ -28,12 +28,12 @@ class Project extends Component {
               )
             }
 
-          </ul>
+
+          </div>
 
 
 
-
-          <div className="row">
+          <div className="container row justify-content-md-left">
             {
               this.props.tech.map(
                 tec => {

@@ -20,12 +20,16 @@ class Tech extends Component {
         if (this.props.title.includes('Visual Studio')) imgPath = "./img/Icon/Vs.jpg"
         if (this.props.title.includes('Visual Studio Code')) imgPath = "./img/Icon/VsCode.jpg"
         if (this.props.title.includes('C#')) imgPath = "./img/Icon/c-sharp.png"
-        if (this.props.title.includes('Bootstrap')) imgPath = "./img/Icon/BootStrap.jpg"
+        if (this.props.title.includes('Bootstrap')) imgPath = "./img/Icon/BootStrap.png"
 
         if (imgPath.length > 0)
             return (
-
-                <img style={{ height: '4rem', width: 'auto' }} src={imgPath} alt={this.props.title} />
+                <>
+                    <div className="col col-md-auto">
+                        <img style={{ height: '3.5rem', width: 'auto' }} src={imgPath} alt={this.props.title} />
+                        {/* <span className="badge bg-dark">{this.props.title}</span> */}
+                    </div>
+                </>
             )
         else
             return (
