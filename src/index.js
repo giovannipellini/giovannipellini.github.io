@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Project from './project';
 import 'bootstrap/dist/css/bootstrap.css';
-import ProjectData from './projectData.json'
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import App from './App';
+import ProjectDetail from './ProjectDetail';
+import Resume from './resume';
 
 //import vpt1 from './img/VPT/vpt1.png'
 
@@ -13,27 +15,37 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div style={{backgroundImage: `url('./img/BackGround/2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
-    {/* <img src="./Img/Code2.png" alt="" style={{width:'100%', height:'20rem', margin:'0px 0 0 -0px', paddingBottom:'5rem'}} /> */}
     
-    <div className='container'>
-    <h2 className='text-center'>About me</h2>
-    <p>I'm a software engineer with 10+ year experience. I'm currently working full time for an italian insurance company.</p>
-    <h1 className='text-center'>Projects</h1>
-      <div className='row'>
-        {
-          
-          ProjectData.map(
-            pData => {
-              return (
+    <BrowserRouter>
 
-                <Project key={pData.id} image={pData.image} title={pData.title} description={pData.description} features={pData.features} tech={pData.tech} />
+    
 
-              )
-            }
-          )
-        }
-      </div>
+    <nav className="navbar navbar-light bg-light">
+  <div className="container-fluid">
+    <div className='navbar-brand' >
+    <Link className='navbar-brand' to="/"> 
+      <img src="./img/Icon/icons8-home.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
+      Home
+      </Link>
+    
+      <Link className='navbar-brand' to="/resume"> 
+      <img src="./img/Icon/curriculum-resume-svgrepo-com.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
+      Resume
+      </Link>
     </div>
+  
+  </div>
+</nav>
+
+    <Routes>
+      <Route path="/" element={<App/>} />
+      <Route path="/resume" element={<Resume />} />
+      <Route path="project/:projectname" element={<ProjectDetail />} />
+      
+    </Routes>
+  </BrowserRouter>
+
+   
   </React.StrictMode>
 );
 

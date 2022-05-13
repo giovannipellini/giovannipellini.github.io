@@ -2,6 +2,7 @@ import { Component } from "react";
 import Feature from "./feature";
 import Tech from "./tech";
 
+
 class Project extends Component {
   render() {
     return (
@@ -49,9 +50,11 @@ class Project extends Component {
 
 
           <div className="card-body">
-
+            <button type="button" className="btn btn-primary stretched-link" onClick={a => {alert('ciao')} }>More details</button>
           </div>
         </div>
+
+        
       </div>
     )
   }

@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Project from './project';
+import ProjectData from './projectData.json';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h2 className='text-center'>About me</h2>
+      <p>I'm a software engineer with 10+ year experience. I'm currently working full time for an italian insurance company.</p>
+      <h1 className='text-center'>Projects</h1>
+
+      <div className="">
+        <div className='row'>
+          {
+
+            ProjectData.map(
+              pData => {
+                return (
+
+                  <Project key={pData.id} image={pData.image} title={pData.title} description={pData.description} features={pData.features} tech={pData.tech} />
+
+                )
+              }
+            )
+          }
+        </div>
+      </div>
     </div>
   );
 }
