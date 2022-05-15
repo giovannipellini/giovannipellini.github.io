@@ -8,7 +8,8 @@
         { "id": 0, "title": "Enquiring several Oracle and SQL database"},
         { "id": 1, "title": "Inspecting online applications to detect downtimes"},
         { "id": 2, "title": "Batch process to detect possible application failures"},
-        { "id": 3, "title": "Online WS testing using Reflection"}
+        { "id": 3, "title": "Copy an entity from one DB to another"},
+        { "id": 4, "title": "Online WS testing using Reflection"}
       ],
       "tech": [
         { "id": 0, "title": "VB.NET 2019"},
