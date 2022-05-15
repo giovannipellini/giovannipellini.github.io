@@ -14,7 +14,7 @@ import Resume from './resume';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div style={{backgroundImage: `url('./img/BackGround/2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
+    <div style={{backgroundImage: `url('/img/BackGround/2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
     
     <BrowserRouter>
 
@@ -24,12 +24,12 @@ root.render(
   <div className="container-fluid">
     <div className='navbar-brand' >
     <Link className='navbar-brand' to="/"> 
-      <img src="./img/Icon/icons8-home.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
+      <img src="/img/Icon/icons8-home.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
       Home
       </Link>
     
       <Link className='navbar-brand' to="/resume"> 
-      <img src="./img/Icon/curriculum-resume-svgrepo-com.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
+      <img src="/img/Icon/curriculum-resume-svgrepo-com.svg" alt="" width="24" height="24" className="d-inline-block align-text-top" />
       Resume
       </Link>
     </div>
@@ -40,7 +40,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App/>} />
       <Route path="/resume" element={<Resume />} />
-      <Route path="project/:projectname" element={<ProjectDetail />} />
+      <Route path="project/:projectId" element={<ProjectDetail />} />
       
     </Routes>
   </BrowserRouter>

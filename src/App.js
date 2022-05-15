@@ -17,7 +17,7 @@ function App() {
               pData => {
                 return (
 
-                  <Project key={pData.id} image={pData.image} title={pData.title} description={pData.description} features={pData.features} tech={pData.tech} />
+                  <Project key={pData.id} id={pData.id} image={pData.image} title={pData.title} description={pData.description} features={pData.features} tech={pData.tech} />
 
                 )
               }
