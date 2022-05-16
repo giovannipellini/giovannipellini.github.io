@@ -1,4 +1,5 @@
 import React from 'react';
+import { GistCode } from '../GistCode';
 
 export function WordleSolver(pData) {
   return <>
@@ -18,9 +19,7 @@ export function WordleSolver(pData) {
 
 
     <figure className="">
-
-      <iframe title='sourceCode' style={{ minWidth: 200, width: '100%', height: '450px' }} scrolling="no" seamless="seamless" srcdoc='<html><body><style type="text/css">.gist .gist-data { height: 400px; }</style><script src="https://gist.github.com/giovannipellini/0dc60e560667059706045203637f7bf5.js"></script></body></html>'></iframe>
-
+       {GistCode("https://gist.github.com/giovannipellini/0dc60e560667059706045203637f7bf5.js")}
       <figcaption className="figure-caption">Code section of the word filter according to the List of hints.</figcaption>
     </figure>
 
