@@ -14,7 +14,7 @@ import Resume from './resume';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div style={{backgroundImage: `url('/img/BackGround/2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
+    <div style={{backgroundImage: `url('/img/BackGround/Code2.png')`, backgroundSize:'cover'}} ><div className='top-50 fs-1 text-center p-5 position-relative' ><span className='text-light h1' style={{fontSize:'3rem'}}>Giovanni Pellini</span></div></div>
     
     <BrowserRouter>
 
