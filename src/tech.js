@@ -21,6 +21,7 @@ class Tech extends Component {
         if (this.props.title.includes('Visual Studio Code')) imgPath = "/img/Icon/VsCode.jpg"
         if (this.props.title.includes('C#')) imgPath = "/img/Icon/c-sharp.png"
         if (this.props.title.includes('Bootstrap')) imgPath = "/img/Icon/BootStrap.png"
+        if (this.props.title.includes('Github')) imgPath = "/img/Icon/github.svg"
 
         if (imgPath.length > 0)
             return (

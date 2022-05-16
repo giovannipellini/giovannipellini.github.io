@@ -3,6 +3,19 @@ import React from 'react'
 function Resume() {
   return (
       <div className='container'>
+
+        <table>
+<tr>
+  <td></td><td className='text-center'>EN</td><td className='text-center'>IT</td>
+</tr>
+<tr>
+  <td>Download</td>
+  <td><a href='/resume/Resume-EN.pdf'><img src='/img/Icon/PDF_icon.svg' height={30} width={30} alt='Resume EN'></img></a></td>
+  <td><a href='/resume/Resume-IT.pdf'><img src='/img/Icon/PDF_icon.svg' height={30} width={30} alt='Resume IT'></img></a></td>
+</tr>
+
+        </table>
+        <hr/>
     <h6>PROFESSIONAL EXPERIENCE</h6>
 <h3>Senior Analyst/Developer .NET and JAVA</h3>
 <small>01/01/2011–present</small>

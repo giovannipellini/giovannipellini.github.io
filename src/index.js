@@ -40,7 +40,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App/>} />
       <Route path="/resume" element={<Resume />} />
-      <Route path="project/:projectId" element={<ProjectDetail />} />
+      <Route path="/project/:projectId" element={<ProjectDetail />} />
       
     </Routes>
   </BrowserRouter>
