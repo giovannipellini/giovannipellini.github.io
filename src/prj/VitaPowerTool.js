@@ -26,7 +26,7 @@ export function VitaPowerTool(pData) {
 
     <div className='d-flex justify-content-center'>
       <figure className="figure">
-        <img src='/img/VPT/ForeignLinkedentity.svg' className="img-fluid" alt="..." />
+        <img src='/img/VPT/ForeignLinkedEntity.svg' className="img-fluid" alt="..." />
         <figcaption className="figure-caption">Example of Foreign and Linked Entities</figcaption>
       </figure>
     </div>
