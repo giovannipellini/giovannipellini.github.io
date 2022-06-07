@@ -20,6 +20,19 @@
       ]
     },
     {
+      "id": 5,
+      "image": "/img/3DScanner/3DScanner.png",
+      "title": "3D Scanner from stereoscopic views",
+      "description": "This is the project of my Master degree's thesis. It's an application to scan a 3D object from a stereo system of video/picture. The goal of the application is to merge the series of images and generate a 3D cloud point.",
+      "features": [
+        { "id": 0, "title": ""}
+      ],
+      "tech": [
+        { "id": 0, "title": "C++"},
+        { "id": 1, "title": "OpenCV"}
+      ]
+    },
+    {
       "id": 3,
       "image": "/img/W3DEngine/W3D.png",
       "title": "Wolfenstein 3D Engine",

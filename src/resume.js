@@ -49,7 +49,7 @@ function Resume() {
 <p>Alma Mater Studiorum – Università di Bologna, Bologna (Italia)</p>
 <ul>
 <li>design and development of a three-dimensional scanner from stereoscopic views</li>
-<li>design and development of an infrastructure to support real-time applications distribuito</li>
+<li>design and development of an infrastructure to support real-time applications distribuiton</li>
 <li>design and development of an application for the industrial inspection of mechanical parts using artificial vision</li>
 </ul>
 <h6>PROFESSIONAL SKILLS</h6>

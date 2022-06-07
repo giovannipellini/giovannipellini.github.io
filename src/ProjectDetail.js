@@ -8,6 +8,7 @@ import { Wolfenstein3DEngine } from './prj/Wolfenstein3DEngine';
 import { HearthstoneMercenariesBot } from './prj/HearthstoneMercenariesBot';
 import { VitaPowerTool } from './prj/VitaPowerTool';
 import { PersonalWebSite } from './prj/PersonalWebSite';
+import { _3DScanner } from './prj/3DScanner';
 
 
 export default function ProjectDetail() {
@@ -77,6 +78,8 @@ function Body(pData) {
       return Wolfenstein3DEngine();
     case 4:
       return WordleSolver();
+    case 5:
+      return _3DScanner();
     default:
       break;
   }
