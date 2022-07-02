@@ -21,6 +21,22 @@
       ]
     },
     {
+      "id": 6,
+      "image": "/img/RollerCoasterVR/1.png",
+      "title": "Roller Coaster VR",
+      "description": "This is a python application which tries to solve the synchronization problems of VR devices attached to a roller coaster. Various simulations have been recorded and the data has been fed to a neural network to predict the speed.",
+      "features": [
+        { "id": 0, "title": "Distinct view from each wagon"},
+        { "id": 1, "title": "Predicting train speed and adjusting error"}       
+      ],
+      "tech": [
+        { "id": 0, "title": "Python"},
+        { "id": 1, "title": "Tensorflow"},
+        { "id": 2, "title": "Google_Colaboratory"},
+        { "id": 3, "title": "Blender"}
+      ]
+    },
+    {
       "id": 5,
       "image": "/img/3DScanner/3DScanner.png",
       "title": "3D Scanner from stereoscopic views",

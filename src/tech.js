@@ -24,6 +24,12 @@ class Tech extends Component {
         if (this.props.title.includes('Github')) imgPath = "/img/Icon/github.svg"
         if (this.props.title.includes('C++')) imgPath = "/img/Icon/Cplusplus.svg"
         if (this.props.title.includes('NUnit')) imgPath = "/img/Icon/NUnit.svg"
+
+        if (this.props.title.includes('Python')) imgPath = "/img/Icon/Python.svg"
+        if (this.props.title.includes('Tensorflow')) imgPath = "/img/Icon/Tensorflow.svg"
+        if (this.props.title.includes('Google_Colaboratory')) imgPath = "/img/Icon/Google_Colaboratory_SVG_Logo.svg"
+        if (this.props.title.includes('Blender')) imgPath = "/img/Icon/blender.svg"
+
         
         if (imgPath.length > 0)
             return (

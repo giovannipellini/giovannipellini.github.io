@@ -9,7 +9,7 @@ import { HearthstoneMercenariesBot } from './prj/HearthstoneMercenariesBot';
 import { VitaPowerTool } from './prj/VitaPowerTool';
 import { PersonalWebSite } from './prj/PersonalWebSite';
 import { _3DScanner } from './prj/3DScanner';
-
+import { RollerCoasterVR } from './prj/RollerCoasterVR';
 
 export default function ProjectDetail() {
   let { projectId } = useParams();
@@ -80,6 +80,8 @@ function Body(pData) {
       return WordleSolver();
     case 5:
       return _3DScanner();
+    case 6:
+      return RollerCoasterVR();
     default:
       break;
   }
