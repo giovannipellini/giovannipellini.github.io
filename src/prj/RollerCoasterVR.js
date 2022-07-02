@@ -56,7 +56,7 @@ export function RollerCoasterVR(pData) {
 
 
     <div className='row'>
-      <div className='col-lg-6 col-sm-12'>
+      <div className='col-lg-4 col-sm-12'>
         <div className='d-flex justify-content-center'>
           <figure className="figure">
             <img src='/img/RollerCoasterVR/tensorFlowData.png' className="img-fluid" alt="..." />
@@ -64,11 +64,16 @@ export function RollerCoasterVR(pData) {
           </figure>
         </div>
       </div>
-      <div className='col-lg-6 col-sm-12'>
+      <div className='col-lg-8 col-sm-12'>
         <div className='d-flex justify-content-center'>
         <p>
-      The data recorded in the simulation has been fed to a simple regression Neural Network. To create the network I used TensorFlow and Google Colab.
+      The data recorded in the simulation has been fed to a regression Neural Network. To create the network I used TensorFlow and Google Colab.
+      <br/>125 samples have been recorded:
+      <li>80 for the training set</li> 
+      <li>20 for the testing set</li> 
+      <li>25 for evaluation</li> 
     </p> 
+
         </div>
       </div>
     </div>
@@ -85,19 +90,35 @@ export function RollerCoasterVR(pData) {
       <div className='col-lg-6 col-sm-12'>
         <div className='d-flex justify-content-center'>
         <p>
-      125 samples have been recorded:
-      <li>80 for the training set</li> 
-      <li>20 for the testing set</li> 
-      <li>25 for evaluation</li> 
+      
 
       Since at each sensor we will have more data I trained N-1 network having from less to full data. The network is sequential with 2 layers: from 50 to 1 dense neurons.
-      I used Adam as optimezer algorithm and MSE for metrics and loss.
+      I used Adam as optimizer algorithm and MSE for metrics and loss.
+      <br/>
+      The prediction rate is quite good, less than .2 MSE for each checkpoint with a couple exceptions. 
     </p>  
         </div>
       </div>
     </div>
 
-  
+    <h3>RealTime speed correction</h3>
+    
+    <p>
+      At every checkpoint the application can get the exact train position and speed. 
+    </p>
+
+    <h3>Example</h3>
+
+    <div className='d-flex justify-content-center'>
+      <iframe
+        width="700"
+        height="500"
+        src={`https://youtube.com/embed/guvko0opA7g`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube" />
+    </div>
       
   </>;
 }
