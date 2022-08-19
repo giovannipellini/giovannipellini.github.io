@@ -5,7 +5,7 @@ export function RollerCoasterVR(pData) {
     
    
     
-    <h3>Roller Coaster design and physics</h3>
+    <h3>Roller Coaster design</h3>
       <p>I've created a roller coaster based on Vekoma MK-1200 and a simple scenario. The model is made with Blender. The track of the coaster (in orange in the next figure) is saved as an .obj file and used to compute the speed. In this simulation the train has 4 wagons and has to calculate the position and the view for each one.</p>
     
       
@@ -17,35 +17,49 @@ export function RollerCoasterVR(pData) {
         </div>
       
       
-   
+    <h3>Output video</h3>
+
     <p>
-      Then I created some physics of this simulation. The roller coaster is lifted by a chain, as the Vekoma MK-1200, and then driven by inertia. I added some disruption forces such as the wagon weights distribution, the wind direction and intensity.
+      For this application I decided to use a set of prerendered frames to show in the VR device, each frame is linked to a position in the roller coaster.
+
+
     </p>
 
-    <div className='row'>
-      <div className='col-lg-6 col-sm-12'>
+    
+
+
+    
         <div className='d-flex justify-content-center'>
           <figure className="figure">
-            <img src='/img/RollerCoasterVR/PreDrop.jpg' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">Weight distribution dynamics</figcaption>
+            <img src='/img/RollerCoasterVR/PreDrop.png' className="img-fluid" alt="..." />
+            <figcaption className="figure-caption">Example of train position with the relative VR frame</figcaption>
           </figure>
         </div>
-      </div>
-      <div className='col-lg-6 col-sm-12'>
-        <div className='d-flex justify-content-center'>
-          <p>
-            In the example in figure the train is at the end of the lift, on the predrop.
-            Let's suppose the first 2 wagons (red and green) are full of people while the others (yellow and blue) are empty.
-            The weight of the people in the first 2 wagons will make the train drop faster, in other words the train will accelerate more.
-            Now suppose the opposite: if the train is heavier in the last wagons it will be held back for longer. Having a lower speed while the heavier wagons are still going up.
-          <br/>
-            This example also shows how the 4 wagons VR visor have to display 4 different images: the green wagon is facing down while the blue one is facing up.
-         
-          </p>
-        </div>
-      </div>
-    </div>
 
+   
+
+    <p>
+  
+      This example shows how the 4 wagons VR visor have to display 4 different images: the green wagon is facing down while the blue one is facing up. Each wagon will also approach the same position in the roller coaster at different speed, which means they have to see the video at different speeds. A limitation of this approach is that static animation in the video will not be static anymore, the animation playback will follow the train speed. To solve this problem the output video has to be rendered real time.
+  
+    </p>
+
+    <h3>Physics</h3>
+    <p>
+      Then I created some physics of this simulation. The roller coaster is lifted by a chain, as the Vekoma MK-1200, which builds the potential energy and then driven by inertia. I added some disruption forces such as the wagon weights distribution, the wind direction and intensity.
+    </p>
+
+
+    <p>
+      In the example in figure the train is at the end of the lift, on the predrop.
+      Let's suppose the first 2 wagons (red and green) are full of people while the others (yellow and blue) are empty.
+      The weight of the people in the first 2 wagons will make the train drop faster, in other words the train will accelerate more.
+      Now suppose the opposite: if the train is heavier in the last wagons it will be held back for longer. Having a lower speed while the heavier wagons are still going up.
+      
+    </p>
+
+
+    
 
     <p>
       In this application I'm supposing the roller coaster have a set of N speed sensors along the track. So that when the train hit one of this sensors we can determine the real position and speed. 
@@ -104,10 +118,22 @@ export function RollerCoasterVR(pData) {
     <h3>RealTime speed correction</h3>
     
     <p>
-      At every checkpoint the application can get the exact train position and speed. 
-    </p>
+      At every checkpoint the exact train position and speed is retrieved. Based on the predicted position we can calculate how off the prediction was.
+      If the predicted position is ahead of the real position the train (and so the video) has to go proportionally slower to meet the next predicted checkpoint position.
 
-    <h3>Example</h3>
+      Viceversa, if the predicted position is behind, the train has to speed up.
+
+      This is to minimize the error between the predicted and real position. The predicted position (linked to the relative video frame) cannot jump back and forward to keep the most realistic user experience, so it must stick with the video timeline adjusting just the speed to correct the error.
+
+
+    </p>
+  <div className='d-flex justify-content-center'>
+          <figure className="figure">
+            <img src='/img/RollerCoasterVR/SpeedCorrection.png' className="img-fluid" alt="..." />
+            <figcaption className="figure-caption">Example of speed correction when the prediction is behind the real position. (in red the expected speed, in green the adjusted speed)</figcaption>
+          </figure>
+        </div>
+    <h3>Demo</h3>
 
     <div className='d-flex justify-content-center'>
       <iframe
