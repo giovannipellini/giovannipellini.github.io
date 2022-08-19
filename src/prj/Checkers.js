@@ -2,150 +2,72 @@ import React from 'react';
 
 export function Checkers(pData) {
   return <>
-    
-   
-    
+
+
+
     <h3>FrontEnd</h3>
-      <p>The FrontEnd is built in Angular, each element of the game (board, cell, piece) is a separate component so this elements can be reused 
-        multiple times with different layouts. For example in the main board pawns and kings are rendered as SVGs while in the smaller boards are simples rounded divs.</p>
-    
-      
-        <div className='d-flex justify-content-center'>
-          <figure className="figure">
-            <img src='/img/Checkers/Main.png' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">The Main Board with SVG pieces</figcaption>
-          </figure>
-        </div>
-      
-      
+    <p>The FrontEnd is built in Angular, each element of the game (board, cell, piece) is a separate component so this elements can be reused
+      multiple times with different layouts. For example in the main board pawns and kings are rendered as SVGs while in the smaller boards are simples rounded divs.</p>
+
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/Checkers/Main.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">The Main Board with SVG pieces</figcaption>
+      </figure>
+    </div>
+
+
     <h3>BackEnd</h3>
 
     <p>
-      The BackEnd is built in Java using Spring Boot Framework. 
-
+      The BackEnd is built in Java using Spring Boot Framework. It features several APIs to manage the game state and move suggestion. Here is an example of API the FrontEnd can invoke.
+      <ul>
+        <li>Get possible moves</li>
+        <li>Resolve a move</li>
+        <li>Get hint for the best move</li>
+        <li>Get the list of evaluation for the best possible moves</li>
+      </ul>
 
     </p>
 
-    
 
 
-    
-        <div className='d-flex justify-content-center'>
-          <figure className="figure">
-            <img src='/img/RollerCoasterVR/PreDrop.png' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">Example of train position with the relative VR frame</figcaption>
-          </figure>
-        </div>
 
-   
-
+    <h4>Best Moves</h4>
     <p>
-  
-      This example shows how the 4 wagons VR visor have to display 4 different images: the green wagon is facing down while the blue one is facing up. Each wagon will also approach the same position in the roller coaster at different speed, which means they have to see the video at different speeds. A limitation of this approach is that static animation in the video will not be static anymore, the animation playback will follow the train speed. To solve this problem the output video has to be rendered real time.
-  
-    </p>
 
-    <h3>Physics</h3>
-    <p>
-      Then I created some physics of this simulation. The roller coaster is lifted by a chain, as the Vekoma MK-1200, which builds the potential energy and then driven by inertia. I added some disruption forces such as the wagon weights distribution, the wind direction and intensity.
-    </p>
+      The best move is found by exploring the tree of possible moves using the MinMax strategy. For each move a score is assigned based on the board state. Some criteria are:
+      <ul>
+        <li>Difference between number of pawns and kings for current and opponent player</li>
+        <li>Number of krowned pieces</li>
+        <li>Piece positioning</li>
 
-
-    <p>
-      In the example in figure the train is at the end of the lift, on the predrop.
-      Let's suppose the first 2 wagons (red and green) are full of people while the others (yellow and blue) are empty.
-      The weight of the people in the first 2 wagons will make the train drop faster, in other words the train will accelerate more.
-      Now suppose the opposite: if the train is heavier in the last wagons it will be held back for longer. Having a lower speed while the heavier wagons are still going up.
-      
-    </p>
-
-
-    
-
-    <p>
-      In this application I'm supposing the roller coaster have a set of N speed sensors along the track. So that when the train hit one of this sensors we can determine the real position and speed. 
-      With the physics set up I then ran about a houndred simulation changing pseudo-randomly the disruption parameters and recorded the speed at every sensor.
-    </p>
-
-    <h3>Neural Network with TensorFlow and Google Colab</h3>
-
-
-    <div className='row'>
-      <div className='col-lg-4 col-sm-12'>
-        <div className='d-flex justify-content-center'>
-          <figure className="figure">
-            <img src='/img/RollerCoasterVR/tensorFlowData.png' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">Data used in the Neural Network</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div className='col-lg-8 col-sm-12'>
-        <div className='d-flex justify-content-center'>
-        <p>
-      The data recorded in the simulation has been fed to a regression Neural Network. To create the network I used TensorFlow and Google Colab.
-      <br/>125 samples have been recorded:
-      <li>80 for the training set</li> 
-      <li>20 for the testing set</li> 
-      <li>25 for evaluation</li> 
-    </p> 
-
-        </div>
-      </div>
-    </div>
-
-    <div className='row'>
-      <div className='col-lg-6 col-sm-12'>
-        <div className='d-flex justify-content-center'>
-          <figure className="figure">
-            <img src='/img/RollerCoasterVR/tensorFlowCompileMSE.png' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">Neural Network Structure and MSE evaluation</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div className='col-lg-6 col-sm-12'>
-        <div className='d-flex justify-content-center'>
-        <p>
-      
-
-      Since at each sensor we will have more data I trained N-1 network having from less to full data. The network is sequential with 2 layers: from 50 to 1 dense neurons.
-      I used Adam as optimizer algorithm and MSE for metrics and loss.
-      <br/>
-      The prediction rate is quite good, less than .2 MSE for each checkpoint with a couple exceptions. 
-    </p>  
-        </div>
-      </div>
-    </div>
-
-    <h3>RealTime speed correction</h3>
-    
-    <p>
-      At every checkpoint the exact train position and speed is retrieved. Based on the predicted position we can calculate how off the prediction was.
-      If the predicted position is ahead of the real position the train (and so the video) has to go proportionally slower to meet the next predicted checkpoint position.
-
-      Viceversa, if the predicted position is behind, the train has to speed up.
-
-      This is to minimize the error between the predicted and real position. The predicted position (linked to the relative video frame) cannot jump back and forward to keep the most realistic user experience, so it must stick with the video timeline adjusting just the speed to correct the error.
-
+      </ul>
 
     </p>
-  <div className='d-flex justify-content-center'>
-          <figure className="figure">
-            <img src='/img/RollerCoasterVR/SpeedCorrection.png' className="img-fluid" alt="..." />
-            <figcaption className="figure-caption">Example of speed correction when the prediction is behind the real position. (in red the expected speed, in green the adjusted speed)</figcaption>
-          </figure>
-        </div>
-    <h3>Demo</h3>
 
     <div className='d-flex justify-content-center'>
-      <iframe
-        width="700"
-        height="500"
-        src={`https://youtube.com/embed/guvko0opA7g`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded youtube" />
+      <figure className="figure">
+        <img src='/img/Checkers/Tree.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Example of tree of possible moves</figcaption>
+      </figure>
     </div>
-      
+
+
+
+    <p>
+      One interesting feature is to explore a board state and get an evaluation of the possible moves, so the player can determine is his move was good or bad based on the application prediction.
+
+      Here is and example of this feature:
+    </p>
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/Checkers/MoveEvaluation.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Example of move evaluation</figcaption>
+      </figure>
+    </div>
+
   </>;
 }
