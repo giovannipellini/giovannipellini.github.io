@@ -22,9 +22,9 @@
     },
     {
       "id": 6,
-      "image": "/img/RollerCoasterVR/1.png",
+      "image": "/img/RollerCoasterVR/2.png",
       "title": "Roller Coaster VR",
-      "description": "This is a python application which tries to solve the synchronization problems of VR devices attached to a roller coaster. Various simulations have been recorded and the data has been fed to a neural network to predict the speed.",
+      "description": "A python application which tries to solve the synchronization problems of VR devices attached to a roller coaster. A neural network compiled with Tensorflow is used to predict the speed.",
       "features": [
         { "id": 0, "title": "Distinct view from each wagon"},
         { "id": 1, "title": "Predicting train speed and adjusting error"}       
@@ -47,6 +47,20 @@
       "tech": [
         { "id": 0, "title": "C++"},
         { "id": 1, "title": "OpenCV"}
+      ]
+    },
+    {
+      "id": 7,
+      "image": "/img/Checkers/Main2.png",
+      "title": "Checkers",
+      "description": "This is tool assisted game of Checkers. It's built with a FrontEnd in Angular and a microservice BackEnd in Java 11 with Spring Boot Framework.",
+      "features": [
+        { "id": 0, "title": ""}
+      ],
+      "tech": [
+        { "id": 0, "title": "Angular"},
+        { "id": 0, "title": "Java"},
+        { "id": 0, "title": "Spring"}
       ]
     },
     {

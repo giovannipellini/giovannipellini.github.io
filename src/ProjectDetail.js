@@ -10,6 +10,7 @@ import { VitaPowerTool } from './prj/VitaPowerTool';
 import { PersonalWebSite } from './prj/PersonalWebSite';
 import { _3DScanner } from './prj/3DScanner';
 import { RollerCoasterVR } from './prj/RollerCoasterVR';
+import { Checkers } from './prj/Checkers';
 
 export default function ProjectDetail() {
   let { projectId } = useParams();
@@ -82,6 +83,8 @@ function Body(pData) {
       return _3DScanner();
     case 6:
       return RollerCoasterVR();
+    case 7:
+      return Checkers();
     default:
       break;
   }

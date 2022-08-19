@@ -30,6 +30,10 @@ class Tech extends Component {
         if (this.props.title.includes('Google_Colaboratory')) imgPath = "/img/Icon/Google_Colaboratory_SVG_Logo.svg"
         if (this.props.title.includes('Blender')) imgPath = "/img/Icon/blender.svg"
 
+        if (this.props.title.includes('Angular')) imgPath = "/img/Icon/Angular.svg"
+        if (this.props.title.includes('Java')) imgPath = "/img/Icon/Java.svg"
+        if (this.props.title.includes('Spring')) imgPath = "/img/Icon/Spring.svg"
+
         
         if (imgPath.length > 0)
             return (
