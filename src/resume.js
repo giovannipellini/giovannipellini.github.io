@@ -44,7 +44,7 @@ function Resume() {
       <ul>
         <li>Application  maintenance and development for a Web application of GSK (farmaceutical multinational).</li>
       </ul>
-      <h3>VB6 e .NET Developer</h3>
+      <h3>VB6 and .NET Developer</h3>
       <small>01/03/2009–31/12/2009</small>
       <h6>Lynx S.p.A., Padova (Italia)</h6>
       <ul>
@@ -62,9 +62,10 @@ function Resume() {
       <h6>PROFESSIONAL SKILLS</h6>
       <h3>Development</h3>
       <ul>
-        <li>Microsoft .NET C# e VB, Java EE, Python</li>
+        <li>Microsoft .NET C# and VB.NET, Java EE Spring, Python</li>
         <li>Angular, React</li>
-        <li>PL-SQL: MS SQL Server e Oracle</li>
+        <li>Automation test: NUnit, Cypress</li>
+        <li>PL-SQL: MS SQL Server and Oracle</li>
         <li>JS, jQuery, AJAX</li>
         <li>JAX-WS, JAX-RS</li>
         <li>HTML, CSS, Bootstrap</li>
