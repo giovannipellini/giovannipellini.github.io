@@ -33,6 +33,7 @@ class Tech extends Component {
         if (this.props.title.includes('Angular')) imgPath = "/img/Icon/Angular.svg"
         if (this.props.title.includes('Java')) imgPath = "/img/Icon/Java.svg"
         if (this.props.title.includes('Spring')) imgPath = "/img/Icon/Spring.svg"
+        if (this.props.title.includes('Cypress')) imgPath = "/img/Icon/Cypress.svg"
 
         
         if (imgPath.length > 0)

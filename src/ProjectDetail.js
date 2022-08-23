@@ -62,6 +62,20 @@ function Header(pData) {
         )
       }
     </div>
+
+    <div className="container row justify-content-md-left">
+      {
+        pData.tech.map(
+          tec => {
+            return (
+              
+                tec.title+ " "
+              
+            )
+          }
+        )
+      }
+    </div>
   </>;
 }
 
