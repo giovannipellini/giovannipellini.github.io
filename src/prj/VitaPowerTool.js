@@ -49,6 +49,44 @@ export function VitaPowerTool(pData) {
       The recursive procedure runs under a separate thread and update a synchronized structure in the meanwhile. This is to allow the user to see in real time which (and how many) entities are being copied.
     </p>
 
+    <h3>CI/CD Process</h3>
+
+    <p>This application has a compilation/test/deploy pipeline built in Jenkins. First the NUnit tests are executed, then the application is built for the deployment stage. Once deployed, Jenkins runs a set of Cypress tests and upload the results as HTML in Jenkins itself.</p>
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/VPT/Jenkins1.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Example of tests with errors</figcaption>
+      </figure>
+    </div>
+
+    <h6>Cypress Dashboard</h6>
+    <p>Test results are then imported to a MongoDB database. A custom dashboard display tests result. This dashboard is written using Blazor WebAssembly.</p>
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/VPT/CypressDashboard1.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Dashboard example with the previous run with errors</figcaption>
+      </figure>
+    </div>
+
+    <p>From this dashboard it is possible to see the video with every run, this can speedup the bug discovery process.</p>
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/VPT/CypressDashboard2.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Video of the run with errors</figcaption>
+      </figure>
+    </div>
+
+    <p>The error log and stacktrace are displayed with the assertion error found</p>
+
+    <div className='d-flex justify-content-center'>
+      <figure className="figure">
+        <img src='/img/VPT/CypressDashboard3.png' className="img-fluid" alt="..." />
+        <figcaption className="figure-caption">Stacktrace of the error</figcaption>
+      </figure>
+    </div>
 
   </>;
 
