@@ -11,6 +11,7 @@ import { PersonalWebSite } from './prj/PersonalWebSite';
 import { _3DScanner } from './prj/3DScanner';
 import { RollerCoasterVR } from './prj/RollerCoasterVR';
 import { Checkers } from './prj/Checkers';
+import { ServiceBridge } from './prj/ServiceBridge';
 
 export default function ProjectDetail() {
   let { projectId } = useParams();
@@ -99,6 +100,8 @@ function Body(pData) {
       return RollerCoasterVR();
     case 7:
       return Checkers();
+    case 8:
+      return ServiceBridge();
     default:
       break;
   }

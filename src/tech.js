@@ -35,6 +35,9 @@ class Tech extends Component {
         if (this.props.title.includes('Spring')) imgPath = "/img/Icon/Spring.svg"
         if (this.props.title.includes('Cypress')) imgPath = "/img/Icon/Cypress.svg"
 
+        if (this.props.title.includes('Kubernetes')) imgPath = "/img/Icon/kubernetes.svg"
+        if (this.props.title.includes('Docker')) imgPath = "/img/Icon/docker.svg"
+        if (this.props.title.includes('RabbitMQ')) imgPath = "/img/Icon/rabbitmq-icon.svg"
         
         if (imgPath.length > 0)
             return (

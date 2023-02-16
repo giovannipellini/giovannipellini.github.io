@@ -51,6 +51,23 @@
       ]
     },
     {
+      "id": 8,
+      "image": "/img/ServiceBridge/ServiceBridgeT.png",
+      "title": "ServiceBridge",
+      "description": "A forward proxy used to make robust call to real services. Requests are queued up using RabbitMQ, in case of service failures it can use the stored data, that can also be used to mock the real service. ServiceBridge is developed as a microservice using Docker and Kubernetes",
+      "features": [
+        { "id": 0, "title": "Forward Proxy"},
+        { "id": 1, "title": "Service recover in case of failure"},
+        { "id": 2, "title": "Mock data availability"}       
+      ],
+      "tech": [
+        { "id": 0, "title": "Java"},
+        { "id": 1, "title": "Docker"},
+        { "id": 2, "title": "Kubernetes"},
+        { "id": 3, "title": "RabbitMQ"}
+      ]
+    },
+    {
       "id": 7,
       "image": "/img/Checkers/Main2.png",
       "title": "Checkers",
